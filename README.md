@@ -1,4 +1,4 @@
-# Recording linux commands of use
+# Recording useful one liners
 
 ## Contents
 - diff
