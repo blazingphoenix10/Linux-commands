@@ -3,6 +3,8 @@
 ## Contents
 - diff
 - grep and grepl
+- apply
+- order
 
 ## diff
 
