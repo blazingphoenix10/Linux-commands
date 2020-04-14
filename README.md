@@ -3,8 +3,9 @@
 ## Contents
 - diff
 - grep and grepl
-- apply
+- apply, sapply, tapply
 - order
+- ave
 
 ## diff
 
