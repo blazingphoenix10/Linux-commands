@@ -6,6 +6,7 @@
 - apply, sapply, tapply
 - order
 - ave
+- ls()
 
 ## diff
 
@@ -32,3 +33,7 @@ grepl indicates whether PATTERN occurs in TEXT as a logical vector
 ```r
   grepl("virus", c("coronavirus", "rhinovirus", "cyanobacteria")
 ```
+
+## ls(packageName)
+
+Lists all the functions in a package.
