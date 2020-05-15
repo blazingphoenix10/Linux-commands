@@ -34,6 +34,14 @@ grepl indicates whether PATTERN occurs in TEXT as a logical vector
   grepl("virus", c("coronavirus", "rhinovirus", "cyanobacteria")
 ```
 
+## sapply
+
+ ```r
+    sample_ids <- c("S108B355.BM_10_739","S109B355.BM_10_791","S112B394.BM_10_621")
+    barcodes <- sapply(strsplit(sample_ids,"_"), function(x){x[3]})
+  ```
+  The above returns: 739, 791, 621
+
 ## ls(packageName)
 
 Lists all the functions in a package.
