@@ -7,6 +7,7 @@
 - order
 - ave
 - ls()
+- stopifnot()
 
 ## diff
 
@@ -45,3 +46,7 @@ grepl indicates whether PATTERN occurs in TEXT as a logical vector
 ## ls(packageName)
 
 Lists all the functions in a package.
+
+## stopifnot(condition)
+
+The program stops if the condition inside stopifnot is not evaluated to TRUE.
