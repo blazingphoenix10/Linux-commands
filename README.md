@@ -8,6 +8,7 @@
 - ave
 - ls()
 - stopifnot()
+- match()
 
 ## diff
 
@@ -50,3 +51,11 @@ Lists all the functions in a package.
 ## stopifnot(condition)
 
 The program stops if the condition inside stopifnot is not evaluated to TRUE.
+
+## match(vector1, vector2)
+
+x <- c("Chennai" ,"Bangalore", "Mumbai")
+y <- c("Bangalore", "Mumbai", "Chennai")
+
+match(x,y) gives 3, 1, 2
+match(y,x) gives 2, 3, 1
