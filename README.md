@@ -9,6 +9,7 @@
 - ls()
 - stopifnot()
 - match()
+- names()
 
 ## diff
 
@@ -63,3 +64,15 @@ The program stops if the condition inside stopifnot is not evaluated to TRUE.
 The above returns:
 3, 1, 2
 2, 3, 1
+
+## names()
+
+ ```r
+   t <- t.test(c(1,2), c(3,4))
+   names(t)
+   t$p.value
+  ```
+The above returns:
+[1] "statistic"   "parameter"   "p.value"     "conf.int"    "estimate"    "null.value" 
+[7] "stderr"      "alternative" "method"      "data.name"
+[1] 0.1055728
