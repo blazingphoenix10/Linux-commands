@@ -10,6 +10,7 @@
 - stopifnot()
 - match()
 - names()
+- split and cat
 
 ## diff
 
@@ -76,3 +77,13 @@ The above returns:
 [1] "statistic"   "parameter"   "p.value"     "conf.int"    "estimate"    "null.value" 
 [7] "stderr"      "alternative" "method"      "data.name"
 [1] 0.1055728
+
+## split and cat
+
+Uploading files of size > 1 GB to the server using remote access is difficult. So, instead large files can be split into smaller files, uploaded to server and then merged.
+
+```{r}
+split -b 200m _CellRangerOutput_matrix.mtx cellRanger_segment.mtx
+cat cellRanger_segment.mtx* > _CellRangerOutput_matrix.mtx
+rm cellRanger_segment.mtx*
+```
