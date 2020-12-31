@@ -37,7 +37,17 @@ grepl indicates whether PATTERN occurs in TEXT as a logical vector
 ```r
   grepl("virus", c("coronavirus", "rhinovirus", "cyanobacteria")
 ```
+## apply, lapply
 
+Checking if the gene expression values conform to a normal distribution. If it does, then we can apply statisical tests such as t-test which assumes the sample is normally distributed.
+```r
+  s <- apply(gExpMatrix, 2, shapiro.test)
+  s_pVal <- unlist(lapply(s, function(s) s$p.value))
+  s_W <- unlist(lapply(s, function(s) s$statistic))
+
+  s_pVal_adj <- p.adjust(s_pVal, "BH")
+  (length(which(s_pVal_adj <= FDR))/length(s_pVal))*100
+```
 ## sapply
 
  ```r
