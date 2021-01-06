@@ -93,7 +93,7 @@ The above returns:
 
 Uploading files of size > 1 GB to the server using remote access is difficult. So, instead large files can be split into smaller files, uploaded to server and then merged.
 
-```{r}
+```
 split -b 200m _CellRangerOutput_matrix.mtx cellRanger_segment.mtx
 cat cellRanger_segment.mtx* > _CellRangerOutput_matrix.mtx
 rm cellRanger_segment.mtx*
@@ -101,7 +101,7 @@ rm cellRanger_segment.mtx*
 
 ## do.call
 
-```{r}
+```r
 readBMfile <- function(fileName){
   file <- read.csv(fileName)
   row.names(file) <- file[,1]
