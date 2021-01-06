@@ -11,6 +11,7 @@
 - match()
 - names()
 - split and cat
+- do.call
 
 ## diff
 
@@ -55,7 +56,7 @@ Checking if the gene expression values conform to a normal distribution. If it d
     barcodes <- sapply(strsplit(sample_ids,"_"), function(x){x[3]})
   ```
   The above returns: 739, 791, 621
-
+  
 ## ls(packageName)
 
 Lists all the functions in a package.
@@ -96,4 +97,15 @@ Uploading files of size > 1 GB to the server using remote access is difficult. S
 split -b 200m _CellRangerOutput_matrix.mtx cellRanger_segment.mtx
 cat cellRanger_segment.mtx* > _CellRangerOutput_matrix.mtx
 rm cellRanger_segment.mtx*
+```
+
+## do.call
+
+```{r}
+readBMfile <- function(fileName){
+  file <- read.csv(fileName)
+  row.names(file) <- file[,1]
+  return(as.data.frame(t(file[,-1])))
+}
+bm <- do.call(rbind, lapply(list.files(pattern = "geneExp_corrected.csv"), readBMfile))
 ```
