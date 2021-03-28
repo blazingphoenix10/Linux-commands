@@ -3,9 +3,8 @@
 ## Contents
 - diff
 - grep and grepl
-- apply, sapply, tapply
-- order
-- ave
+- apply, lapply, unlist
+- sapply
 - ls()
 - stopifnot()
 - match()
@@ -38,9 +37,9 @@ grepl indicates whether PATTERN occurs in TEXT as a logical vector
 ```r
   grepl("virus", c("coronavirus", "rhinovirus", "cyanobacteria")
 ```
-## apply, lapply
+## apply, lapply, unlist
 
-Checking if the gene expression values conform to a normal distribution. If it does, then we can apply statisical tests such as t-test which assumes the sample is normally distributed.
+Checking if the gene expression values conform to a normal distribution. If it does, then we can apply statisical tests such as t-test which assumes the sample is normally distributed. The function unlist is useful in extracting data from the list of lists.
 ```r
   s <- apply(gExpMatrix, 2, shapiro.test)
   s_pVal <- unlist(lapply(s, function(s) s$p.value))
