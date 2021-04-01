@@ -5,12 +5,15 @@
 - grep and grepl
 - apply, lapply, unlist
 - sapply
-- ls()
-- stopifnot()
-- match()
-- names()
+- ls
+- stopifnot
+- match
+- names
 - split and cat
 - do.call
+- scale
+- sweep
+- model.matrix
 
 ## diff
 
@@ -56,15 +59,16 @@ Checking if the gene expression values conform to a normal distribution. If it d
   ```
   The above returns: 739, 791, 621
   
-## ls(packageName)
+## ls
 
+ls(BRETIGEA)
 Lists all the functions in a package.
 
-## stopifnot(condition)
+## stopifnot
 
 The program stops if the condition inside stopifnot is not evaluated to TRUE.
 
-## match(vector1, vector2)
+## match
 
  ```r
     x <- c("Chennai" ,"Bangalore", "Mumbai")
@@ -76,7 +80,7 @@ The above returns:
 3, 1, 2
 2, 3, 1
 
-## names()
+## names
 
  ```r
    t <- t.test(c(1,2), c(3,4))
@@ -107,4 +111,28 @@ readBMfile <- function(fileName){
   return(as.data.frame(t(file[,-1])))
 }
 bm <- do.call(rbind, lapply(list.files(pattern = "geneExp_corrected.csv"), readBMfile))
+```
+## scale
+```{r}
+x <- c(1, 2, 3, 4)
+scaled_x <- scale(x)
+
+scaled_x[1] == (x[1] - mean(x))/sqrt(var(x))
+```
+
+## sweep
+```{r}
+# The following is a function in the package CellCODE
+# sweep is used when we want to perform row/column specific operations, as opposed to apply functions where all the rows and columsn are subject to the same operation.
+svds <- function(data){
+  mm = apply(data,1,mean) # per gene measure
+  tmp = sweep(data,1,mm, "-") # mean subtraction
+  svd(tmp)
+}
+```
+
+## model.matrix
+```{r}
+sample_gp <- c("Dx", "Ctl", "Ctl", "Ctl", "Ctl", "Dx", "Dx", ""Dx")
+model.matrix(~1 + sample_gp)
 ```
