@@ -113,7 +113,7 @@ readBMfile <- function(fileName){
 bm <- do.call(rbind, lapply(list.files(pattern = "geneExp_corrected.csv"), readBMfile))
 ```
 ## scale
-```{r}
+```r
 x <- c(1, 2, 3, 4)
 scaled_x <- scale(x)
 
@@ -121,7 +121,7 @@ scaled_x[1] == (x[1] - mean(x))/sqrt(var(x))
 ```
 
 ## sweep
-```{r}
+```r
 # The following is a function in the package CellCODE
 # sweep is used when we want to perform row/column specific operations, as opposed to apply functions where all the rows and columsn are subject to the same operation.
 svds <- function(data){
@@ -132,7 +132,7 @@ svds <- function(data){
 ```
 
 ## model.matrix
-```{r}
+```r
 sample_gp <- c("Dx", "Ctl", "Ctl", "Ctl", "Ctl", "Dx", "Dx", ""Dx")
 model.matrix(~1 + sample_gp)
 ```
