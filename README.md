@@ -133,6 +133,6 @@ svds <- function(data){
 
 ## model.matrix
 ```r
-sample_gp <- c("Dx", "Ctl", "Ctl", "Ctl", "Ctl", "Dx", "Dx", ""Dx")
+sample_gp <- c("Dx", "Ctl", "Ctl", "Ctl", "Ctl", "Dx", "Dx", "Dx")
 model.matrix(~1 + sample_gp)
 ```
