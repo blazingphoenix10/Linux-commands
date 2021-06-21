@@ -59,12 +59,12 @@ Checking if the gene expression values conform to a normal distribution. If it d
   ```
   The above returns: 739, 791, 621
   
-## ls
+## ls(packageName)
 
 ls(BRETIGEA)
 Lists all the functions in a package.
 
-## stopifnot
+## stopifnot(condition)
 
 The program stops if the condition inside stopifnot is not evaluated to TRUE.
 
@@ -91,6 +91,14 @@ The above returns:
 [1] "statistic"   "parameter"   "p.value"     "conf.int"    "estimate"    "null.value" 
 [7] "stderr"      "alternative" "method"      "data.name"
 [1] 0.1055728
+
+## str
+
+```{r}
+a <- svd(matrix(rnorm(100), nrow = 25, ncol = 4))
+str(a)
+```
+The above return a compact representation of the structure of the U, sigma, V matrices.
 
 ## split and cat
 
@@ -136,3 +144,7 @@ svds <- function(data){
 sample_gp <- c("Dx", "Ctl", "Ctl", "Ctl", "Ctl", "Dx", "Dx", "Dx")
 model.matrix(~1 + sample_gp)
 ```
+
+## browser
+
+browser() function is used for debugging. It can be called within a function, to explore the different local variables created within a function.
