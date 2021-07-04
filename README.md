@@ -14,6 +14,7 @@
 - scale
 - sweep
 - model.matrix
+- browser
 
 ## diff
 
