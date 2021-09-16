@@ -60,9 +60,8 @@ Checking if the gene expression values conform to a normal distribution. If it d
   ```
   The above returns: 739, 791, 621
   
-## ls(packageName)
+## ls(packageName) and help(package = packageName)
 
-ls(BRETIGEA)
 Lists all the functions in a package.
 
 ## stopifnot(condition)
