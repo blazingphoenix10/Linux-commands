@@ -15,6 +15,7 @@
 - sweep
 - model.matrix
 - browser
+- ifelse
 
 ## diff
 
@@ -148,3 +149,15 @@ model.matrix(~1 + sample_gp)
 ## browser
 
 browser() function is used for debugging. It can be called within a function, to explore the different local variables created within a function.
+
+## ifelse
+
+I was today (Sept 27, 2021) years old, when I learnt about the ifelse function
+If can only take into account one condition. If else can take into account a vector of conditions.
+
+ifelse(test, what_to_do_if_test_passes, what_to_do_if_test_fails) 
+
+```{r}
+x <- c(9:-4)
+sqrt(ifelse(x >= 0, x, NA))
+```
