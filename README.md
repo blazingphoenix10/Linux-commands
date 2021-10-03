@@ -16,6 +16,7 @@
 - model.matrix
 - browser
 - ifelse
+- combn
 
 ## diff
 
@@ -45,9 +46,13 @@ grepl indicates whether PATTERN occurs in TEXT as a logical vector
 ## apply, lapply, unlist
 
 Checking if the gene expression values conform to a normal distribution. If it does, then we can apply statisical tests such as t-test which assumes the sample is normally distributed. The function unlist is useful in extracting data from the list of lists.
+
+apply is basically for loop, if MARGIN = 1, we are looping over rows, else if MARGIN = 2, we are looping over columns.
+lapply goes through each element at a time, so if its a matrix it will keep moving from [1,1] to [2,1], [3,1], ... [1, 2] and so on. Else, if it is a list of lists it will go through one list at a time.
+
 ```r
   s <- apply(gExpMatrix, 2, shapiro.test)
-  s_pVal <- unlist(lapply(s, function(s) s$p.value))
+  s_pVal <- unlist(lapply(s, function(s){s$p.value}))
   s_W <- unlist(lapply(s, function(s) s$statistic))
 
   s_pVal_adj <- p.adjust(s_pVal, "BH")
@@ -160,4 +165,13 @@ ifelse(test, what_to_do_if_test_passes, what_to_do_if_test_fails)
 ```{r}
 x <- c(9:-4)
 sqrt(ifelse(x >= 0, x, NA))
+```
+
+## combn
+
+Finds all combinations of the X taken m at a time.
+
+```{r}
+combination <- combn(c("BM10", "BM22", "BM36", "BM44"), 2)
+apply(combination, 2, function(x){paste0(x[1], "-", x[2])})
 ```
