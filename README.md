@@ -23,8 +23,10 @@
 Following is a linux command to look at differences between 2 files, 
 helps a lot when you want to compare two different versions of a file
 
+The -y command switch, shows the differences between the two files column-wise.
+
 ```
-diff file1.txt file2.txt
+diff file1.txt file2.txt -y
 ```
 It shows the changes that need to be made in file 1 to become file 2.
 Or put another way, it shows the differences between file 1 and file 2, with respect to file 1. 
