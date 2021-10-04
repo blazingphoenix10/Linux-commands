@@ -169,7 +169,7 @@ sqrt(ifelse(x >= 0, x, NA))
 
 ## combn
 
-Finds all combinations of the X taken m at a time.
+Finds all combinations of the X taken m at a time. Remember that for combinations, the order doesn't matter. For permutations, it does.
 
 ```{r}
 combination <- combn(c("BM10", "BM22", "BM36", "BM44"), 2)
