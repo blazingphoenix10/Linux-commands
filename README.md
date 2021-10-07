@@ -34,6 +34,10 @@ output:
 - ifelse
 - combn
 - with
+- subset
+- mutate
+- mapvalues
+- gsub
 
 ## diff
 
@@ -196,3 +200,11 @@ apply(combination, 2, function(x){paste0(x[1], "-", x[2])})
 ```
 
 ## with 
+
+## subset
+
+## mutate
+
+## mapvalues
+
+## gsub
