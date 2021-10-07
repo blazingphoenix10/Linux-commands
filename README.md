@@ -1,7 +1,7 @@
 ---
 title: "Recording useful one liners"
 subtitle:
-author:  |
+author:
  | Kailash B P
 output: 
  rmarkdown::html_document:
