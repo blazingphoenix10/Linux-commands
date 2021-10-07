@@ -1,4 +1,20 @@
-# Recording useful one liners
+---
+title: "Recording useful one liners"
+subtitle:
+author:  |
+ | Kailash B P
+output: 
+ rmarkdown::html_document:
+   theme: united
+   highlight: tango
+   code_folding: hide
+   toc: true
+   toc_float: true
+   df_print: paged
+   smooth_scroll: true
+   number_sections: false
+   self_contained: true  
+---
 
 ## Contents
 - diff
@@ -17,6 +33,7 @@
 - browser
 - ifelse
 - combn
+- with
 
 ## diff
 
@@ -177,3 +194,5 @@ Finds all combinations of the X taken m at a time. Remember that for combination
 combination <- combn(c("BM10", "BM22", "BM36", "BM44"), 2)
 apply(combination, 2, function(x){paste0(x[1], "-", x[2])})
 ```
+
+## with 
