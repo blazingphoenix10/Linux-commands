@@ -123,7 +123,7 @@ The above returns:
 
 ## str
 
-```{r}
+```r
 a <- svd(matrix(rnorm(100), nrow = 25, ncol = 4))
 str(a)
 ```
@@ -185,7 +185,7 @@ If can only take into account one condition. If else can take into account a vec
 
 ifelse(test, what_to_do_if_test_passes, what_to_do_if_test_fails) 
 
-```{r}
+```r
 x <- c(9:-4)
 sqrt(ifelse(x >= 0, x, NA))
 ```
@@ -194,7 +194,7 @@ sqrt(ifelse(x >= 0, x, NA))
 
 Finds all combinations of the X taken m at a time. Remember that for combinations, the order doesn't matter. For permutations, it does.
 
-```{r}
+```r
 combination <- combn(c("BM10", "BM22", "BM36", "BM44"), 2)
 apply(combination, 2, function(x){paste0(x[1], "-", x[2])})
 ```
