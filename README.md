@@ -39,6 +39,7 @@ output:
 - mapvalues
 - gsub
 - case_when
+- melt
 
 ## diff
 
@@ -211,3 +212,11 @@ apply(combination, 2, function(x){paste0(x[1], "-", x[2])})
 ## gsub
 
 ## case_when
+
+## melt
+
+Converts data frame from wide format to long format.
+```r
+df <- cars
+melt(df)
+```
