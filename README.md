@@ -33,13 +33,16 @@ output:
 - browser
 - ifelse
 - combn
-- with
 - subset
 - mutate
 - mapvalues
 - gsub
+- with
+- when
 - case_when
 - melt
+- dcast
+- rename
 
 ## diff
 
@@ -68,6 +71,15 @@ grepl indicates whether PATTERN occurs in TEXT as a logical vector
 ```r
   grepl("virus", c("coronavirus", "rhinovirus", "cyanobacteria")
 ```
+
+## gsub
+
+Base R function to modify characters.
+
+```r
+gsub(pattern = "World", replacement = "Universe", x = "Hello, World!")
+```
+
 ## apply, lapply, unlist
 
 Checking if the gene expression values conform to a normal distribution. If it does, then we can apply statisical tests such as t-test which assumes the sample is normally distributed. The function unlist is useful in extracting data from the list of lists.
@@ -201,22 +213,68 @@ combination <- combn(c("BM10", "BM22", "BM36", "BM44"), 2)
 apply(combination, 2, function(x){paste0(x[1], "-", x[2])})
 ```
 
-## with 
-
 ## subset
+
+Subsets based on values, selects particular columns.
+
+```r
+head(subset(x = airquality, subset = !is.na(Ozone), select = c(Ozone, Wind, Temp)), n = 10)
+```
 
 ## mutate
 
+A tidy way to make changes to multiple columns in a dataframe, including the addition of new columns.  
+Mutate overwrites the original dataset.
+
+```r
+mutate(.data = airquality,
+       Ozone = ifelse(is.na(Ozone), mean(Ozone[!is.na(Ozone)]), Ozone)
+)
+```
+
 ## mapvalues
 
-## gsub
+Helps in creating a new vector based on the values from an old vector.
+
+```r
+three_idiots <- c("Remember", "that", "silencer", "joke?")
+mapvalues(3idiots, from = "silencer", to = "funny")
+```
+
+## with 
+
+## when
 
 ## case_when
 
 ## melt
 
-Converts data frame from wide format to long format.
+Wrangles a data frame from a wide format to long format. All column names will be in one column, and their correspoding row values in the adjacent column.
+id.vars is thee list of columns to ignore.
+
+Also, only numeric values get melted.
+
 ```r
-df <- cars
-melt(df)
+a <- cbind(data.frame(matrix(1:10, 5, 2)), rep("Melt", 5))
+b <- melt(a, id.vars = 3) # Gives three columns, Var1, Var2, and value
+
+# Var 1 is row index
+# Var 2 is column index
+# value is the value of a particular entry in the matrix
+```
+
+## dcast
+
+Opposite of melt. Convert data from long format to wide format. 
+
+```r
+
+```
+
+## rename
+
+Rename can be used to rename column names
+
+```r
+plyr::rename(airquality, replace = ("Ozone" = "Ozone_quality_index"))
 ```
