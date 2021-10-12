@@ -38,6 +38,7 @@ output:
 - mutate
 - mapvalues
 - gsub
+- case_when
 
 ## diff
 
@@ -208,3 +209,5 @@ apply(combination, 2, function(x){paste0(x[1], "-", x[2])})
 ## mapvalues
 
 ## gsub
+
+## case_when
