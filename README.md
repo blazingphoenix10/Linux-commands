@@ -238,7 +238,7 @@ Helps in creating a new vector based on the values from an old vector.
 
 ```r
 three_idiots <- c("Remember", "that", "silencer", "joke?")
-mapvalues(3idiots, from = "silencer", to = "funny")
+mapvalues(three_idiots, from = "silencer", to = "funny")
 ```
 
 ## with 
