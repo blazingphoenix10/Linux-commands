@@ -18,14 +18,16 @@ output:
 
 # Contents
 - diff
+- split and cat
 - grep and grepl
+- gsub
 - apply, lapply, unlist
 - sapply
 - ls
 - stopifnot
 - match
 - names
-- split and cat
+- str
 - do.call
 - scale
 - sweep
@@ -42,7 +44,18 @@ output:
 - case_when
 - melt
 - dcast
+- pipes
+- merge
+- filter
+- select
+- arrange
+- transmute
+- summarise
+- group_by
 - rename
+- detectCores
+- makeCluster & registerDoParallel
+- clusterExport
 
 # Unix
 
