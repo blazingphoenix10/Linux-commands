@@ -1,5 +1,5 @@
 ---
-title: "Recording useful one liners"
+title: "Recording useful functions"
 subtitle:
 author:
  | Kailash B P
@@ -16,7 +16,7 @@ output:
    self_contained: true  
 ---
 
-## Contents
+# Contents
 - diff
 - grep and grepl
 - apply, lapply, unlist
@@ -44,6 +44,8 @@ output:
 - dcast
 - rename
 
+# Unix
+
 ## diff
 
 Following is a linux command to look at differences between 2 files, 
@@ -59,6 +61,18 @@ Or put another way, it shows the differences between file 1 and file 2, with res
 
 The format in which it shows the difference is as follows: >File1LineNumber{add (a),change (c), delete(d)}File2LineNumber
 Eg: 1a2, means add line number two from file 2 after file 1 
+
+## split and cat
+
+Uploading files of size > 1 GB to the server using remote access is difficult. So, instead large files can be split into smaller files, uploaded to server and then merged.
+
+```
+split -b 200m _CellRangerOutput_matrix.mtx cellRanger_segment.mtx
+cat cellRanger_segment.mtx* > _CellRangerOutput_matrix.mtx
+rm cellRanger_segment.mtx*
+```
+
+# Base R
 
 ## grep and grepl
 
@@ -143,16 +157,6 @@ str(a)
 ```
 The above return a compact representation of the structure of the U, sigma, V matrices.
 
-## split and cat
-
-Uploading files of size > 1 GB to the server using remote access is difficult. So, instead large files can be split into smaller files, uploaded to server and then merged.
-
-```
-split -b 200m _CellRangerOutput_matrix.mtx cellRanger_segment.mtx
-cat cellRanger_segment.mtx* > _CellRangerOutput_matrix.mtx
-rm cellRanger_segment.mtx*
-```
-
 ## do.call
 
 ```r
@@ -213,6 +217,8 @@ combination <- combn(c("BM10", "BM22", "BM36", "BM44"), 2)
 apply(combination, 2, function(x){paste0(x[1], "-", x[2])})
 ```
 
+# Tidyverse
+
 ## subset
 
 Subsets based on values, selects particular columns.
@@ -271,6 +277,22 @@ Opposite of melt. Convert data from long format to wide format.
 
 ```
 
+## pipes
+
+## merge
+
+## filter
+
+## select
+
+## arrange
+
+## transmute 
+
+## summarise
+
+## group_by
+
 ## rename
 
 Rename can be used to rename column names
@@ -278,3 +300,11 @@ Rename can be used to rename column names
 ```r
 plyr::rename(airquality, replace = ("Ozone" = "Ozone_quality_index"))
 ```
+
+# Parallel processing
+
+## detectCores
+
+## makeCluster & registerDoParallel
+
+## clusterExport
