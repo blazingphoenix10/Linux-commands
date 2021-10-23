@@ -60,8 +60,10 @@ output:
   <li>group_by</li>
   <li>rename</li>
   <li>detectCores</li>
-  <li>makeCluster & registerDoParallel</li>
+  <li>makeCluster makeCluster & ParLapply() & stopCluster()</li>
+  <li>registerDoParallel</li>
   <li>clusterExport</li>
+  <li>Sys.time</li>
  </ol>
  </ol>
 
@@ -326,6 +328,40 @@ plyr::rename(airquality, replace = ("Ozone" = "Ozone_quality_index"))
 
 ## detectCores
 
-## makeCluster & registerDoParallel
+Detects the number of cores
+
+```r
+detectCores()
+```
+
+## makeCluster & ParLapply() & stopCluster()
+
+makeCluster is used to create a cluster of cores. ParLapply is the equivalent of lapply for a cluster of cores. It is good practice to stopCluster after usage. Will need to load the snow - Simple Parallel Computing in R package.
+
+## registerDoParallel
 
 ## clusterExport
+
+## mclapply
+
+mclapply is part of the parallel package. It can be used to split the elements between multiple cores, to make the function run parallely, hence faster.
+
+```r
+ncores <- tectCores()/2
+mclapply(lapply_syntax, mc.cores = ncores)   
+```
+
+## Sys.time
+
+Estimate time taken by a piece of code.
+
+```r
+start.time <- Sys.time()
+i <- 0
+while(i < 100){
+  print(i)
+  i = i + 1
+}
+end.time <- Sys.time()
+elapsed.time <- end.time - start.time
+```
