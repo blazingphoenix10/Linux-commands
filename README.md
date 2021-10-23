@@ -17,45 +17,53 @@ output:
 ---
 
 # Contents
-- diff
-- split and cat
-- grep and grepl
-- gsub
-- apply, lapply, unlist
-- sapply
-- ls
-- stopifnot
-- match
-- names
-- str
-- do.call
-- scale
-- sweep
-- model.matrix
-- browser
-- ifelse
-- combn
-- subset
-- mutate
-- mapvalues
-- gsub
-- with
-- when
-- case_when
-- melt
-- dcast
-- pipes
-- merge
-- filter
-- select
-- arrange
-- transmute
-- summarise
-- group_by
-- rename
-- detectCores
-- makeCluster & registerDoParallel
-- clusterExport
+
+<ol>
+ <li>Unix</li>
+ <ol>
+  <li>diff</li>
+  <li>split and cat</li>
+ </ol>
+ <li>Base R</li>
+ <ol>
+  <li>grep and grepl</li>
+  <li>gsub</li>
+  <li>apply, lapply, unlist</li>
+  <li>sapply</li>
+  <li>ls</li>
+  <li>stopifnot</li>
+  <li>match</li>
+  <li>names</li>
+  <li>str</li>
+  <li>do.call</li>
+  <li>scale</li>
+  <li>sweep</li>
+  <li>model.matrix</li>
+  <li>browser</li>
+  <li>ifelse</li>
+  <li>combn</li>
+  <li>subset</li>
+  <li>mutate</li>
+  <li>mapvalues</li>
+  <li>with</li>
+  <li>when</li>
+  <li>case_when</li>
+  <li>melt</li>
+  <li>dcast</li>
+  <li>pipes</li>
+  <li>merge</li>
+  <li>filter</li>
+  <li>select</li>
+  <li>arrange</li>
+  <li>transmute</li>
+  <li>summarise</li>
+  <li>group_by</li>
+  <li>rename</li>
+  <li>detectCores</li>
+  <li>makeCluster & registerDoParallel</li>
+  <li>clusterExport</li>
+ </ol>
+ </ol>
 
 # Unix
 
