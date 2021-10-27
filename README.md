@@ -47,6 +47,7 @@ output:
   <li>mapvalues</li>
   <li>with</li>
   <li>when</li>
+  <li>cut</li>
   <li>case_when</li>
   <li>melt</li>
   <li>dcast</li>
@@ -273,6 +274,16 @@ mapvalues(three_idiots, from = "silencer", to = "funny")
 ## with 
 
 ## when
+
+## cut
+
+```r
+lec6$bmi_cat <- cut(lec6$bmi,
+                    breaks = c(0, 18.5, 25, 30, 1000),
+                    right = TRUE,
+                    labels = c("Underweight", "Healthy weight", "Overweight", "Obesity")
+                    )
+```
 
 ## case_when
 
