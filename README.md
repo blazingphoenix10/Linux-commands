@@ -243,6 +243,14 @@ apply(combination, 2, function(x){paste0(x[1], "-", x[2])})
 
 # Tidyverse
 
+## glimpse
+
+Tidyverse's way of looking at the data structure.
+
+```r
+glimpse(cars)
+```
+
 ## subset
 
 Subsets based on values, selects particular columns.
@@ -273,9 +281,28 @@ mapvalues(three_idiots, from = "silencer", to = "funny")
 
 ## with 
 
+Evaluates an R expression in an environment constructed from data, could possibly be a copy of the original data. You don't have to keep extracting each column using the $ sign.
+
+```r
+set.seed(333)
+a <- rnorm(20, 10, 1)
+b <- rnorm(20, 15, 2)
+c <- rnorm(20, 20, 3)
+grp <- rep(c('m', 'y'),10)
+(test_data <- data.frame(a, b, c, grp))
+
+with(test_data, t.test(a ~ grp))
+with(test_data, t.test(b ~ grp))
+with(test_data, t.test(c ~ grp))
+
+with(mtcars, mpg[cyl == 8  &  disp > 350]) == mtcars$mpg[mtcars$cyl == 8  &  mtcars$disp > 350]
+```
+
 ## when
 
 ## cut
+
+Can attach a label based on a specificied range of numeric values.
 
 ```r
 lec6$bmi_cat <- cut(lec6$bmi,
@@ -330,6 +357,7 @@ Opposite of melt. Convert data from long format to wide format.
 ## rename
 
 Rename can be used to rename column names
+The double colon is used to specify the package being used. Useful when you don't want to load the entire package, or when there are conflicts between different packages having the same function name.
 
 ```r
 plyr::rename(airquality, replace = ("Ozone" = "Ozone_quality_index"))
