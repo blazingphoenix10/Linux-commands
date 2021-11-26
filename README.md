@@ -277,6 +277,8 @@ Helps in creating a new vector based on the values from an old vector.
 ```r
 three_idiots <- c("Remember", "that", "silencer", "joke?")
 mapvalues(three_idiots, from = "silencer", to = "funny")
+
+mapvalues(rep(c("Wk0", "Wk4"), 10), from = c("Wk0", "Wk4"), to = c("Week 0", "Week 4"))
 ```
 
 ## with 
