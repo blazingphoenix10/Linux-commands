@@ -24,6 +24,7 @@ output:
   <li>diff</li>
   <li>split and cat</li>
  </ol>
+ <li>Not in</li>
  <li>Base R</li>
  <ol>
   <li>grep and grepl</li>
@@ -94,6 +95,12 @@ Uploading files of size > 1 GB to the server using remote access is difficult. S
 split -b 200m _CellRangerOutput_matrix.mtx cellRanger_segment.mtx
 cat cellRanger_segment.mtx* > _CellRangerOutput_matrix.mtx
 rm cellRanger_segment.mtx*
+```
+
+# Not in
+
+```{r}
+'%!in%' <- function(x,y)!('%in%'(x,y))
 ```
 
 # Base R
