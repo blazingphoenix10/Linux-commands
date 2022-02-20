@@ -60,6 +60,7 @@ output:
   <li>transmute</li>
   <li>summarise</li>
   <li>group_by</li>
+  <li>next, unnest, spread</li>
   <li>rename</li>
   <li>detectCores</li>
   <li>makeCluster makeCluster & ParLapply() & stopCluster()</li>
@@ -362,6 +363,8 @@ Opposite of melt. Convert data from long format to wide format.
 ## summarise
 
 ## group_by
+
+## nest, unnest and spread
 
 ## rename
 
