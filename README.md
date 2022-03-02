@@ -19,11 +19,6 @@ output:
 # Contents
 
 <ol>
- <li>Unix</li>
- <ol>
-  <li>diff</li>
-  <li>split and cat</li>
- </ol>
  <li>Not in</li>
  <li>Base R</li>
  <ol>
@@ -69,34 +64,6 @@ output:
   <li>Sys.time</li>
  </ol>
  </ol>
-
-# Unix
-
-## diff
-
-Following is a linux command to look at differences between 2 files, 
-helps a lot when you want to compare two different versions of a file
-
-The -y command switch, shows the differences between the two files column-wise.
-
-```
-diff file1.txt file2.txt -y
-```
-It shows the changes that need to be made in file 1 to become file 2.
-Or put another way, it shows the differences between file 1 and file 2, with respect to file 1. 
-
-The format in which it shows the difference is as follows: >File1LineNumber{add (a),change (c), delete(d)}File2LineNumber
-Eg: 1a2, means add line number two from file 2 after file 1 
-
-## split and cat
-
-Uploading files of size > 1 GB to the server using remote access is difficult. So, instead large files can be split into smaller files, uploaded to server and then merged.
-
-```
-split -b 200m _CellRangerOutput_matrix.mtx cellRanger_segment.mtx
-cat cellRanger_segment.mtx* > _CellRangerOutput_matrix.mtx
-rm cellRanger_segment.mtx*
-```
 
 # Not in
 
