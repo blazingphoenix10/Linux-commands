@@ -57,6 +57,7 @@ output:
   <li>group_by</li>
   <li>next, unnest, spread</li>
   <li>rename</li>
+  <li>left_join</li>
   <li>detectCores</li>
   <li>makeCluster makeCluster & ParLapply() & stopCluster()</li>
   <li>registerDoParallel</li>
